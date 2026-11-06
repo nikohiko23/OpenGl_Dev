@@ -1,0 +1,7 @@
+# ninja log v7
+18	369	8156153090770342	CMakeFiles/OpenGlGameProject.dir/stb_image.cpp.obj	c1df529ce05d0932
+24	480	8156153090820379	CMakeFiles/OpenGlGameProject.dir/D_/OpenGL_Dev/glad.c.obj	bd1e0c0b0fa4ca9a
+23	732	8156995737067939	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	2019b15a021c8234
+13	823	8156153090710406	CMakeFiles/OpenGlGameProject.dir/MainShader.cpp.obj	6e7e512035ec2816
+733	922	8156995744165568	OpenGlGameProject.exe	fd42b74c6b602983
+9	217	8156997993694568	OpenGlGameProject.exe	30247627f76d0ed1
