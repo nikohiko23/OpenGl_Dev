@@ -6,9 +6,8 @@
     ]
   },
   "ExpandedNodes": [
-    "",
-    "\\build"
+    ""
   ],
-  "SelectedNode": "\\build\\OpenGlGameProject.slnx",
+  "SelectedNode": "\\CMakeLists.txt",
   "PreviewInSolutionExplorer": false
 }

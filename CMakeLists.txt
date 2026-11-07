@@ -25,6 +25,7 @@ target_link_options(${PROJECT_NAME} PRIVATE "/NODEFAULTLIB:MSVCRT")
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${CMAKE_CURRENT_SOURCE_DIR}/Tile.png"
+        "${CMAKE_CURRENT_SOURCE_DIR}/awesomeface.png"
         "${CMAKE_CURRENT_SOURCE_DIR}/shader.vert"
         "${CMAKE_CURRENT_SOURCE_DIR}/shader.frag"
         $<TARGET_FILE_DIR:${PROJECT_NAME}>

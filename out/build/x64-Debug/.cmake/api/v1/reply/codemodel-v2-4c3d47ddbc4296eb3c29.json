@@ -50,8 +50,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/out/build/x64-Debug",
-		"source" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject"
+		"build" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/out/build/x64-Debug",
+		"source" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev"
 	},
 	"version" : 
 	{
