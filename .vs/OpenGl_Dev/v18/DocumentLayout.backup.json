@@ -9,22 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\MainShader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MainShader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\MainShader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MainShader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,64 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAAAKAAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-06T20:31:39.182Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainShader.h",
-              "DocumentMoniker": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\MainShader.h",
-              "RelativeDocumentMoniker": "MainShader.h",
-              "ToolTip": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\MainShader.h",
-              "RelativeToolTip": "MainShader.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-11-06T20:34:41.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainShader.cpp",
-              "DocumentMoniker": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\MainShader.cpp",
-              "RelativeDocumentMoniker": "MainShader.cpp",
-              "ToolTip": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\MainShader.cpp",
-              "RelativeToolTip": "MainShader.cpp",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAFQAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-07T18:09:24.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "shader.vert",
-              "DocumentMoniker": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\shader.vert",
-              "RelativeDocumentMoniker": "shader.vert",
-              "ToolTip": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\shader.vert",
-              "RelativeToolTip": "shader.vert",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-11-06T20:34:47.148Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -101,22 +32,22 @@
               "RelativeDocumentMoniker": "shader.frag",
               "ToolTip": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\shader.frag",
               "RelativeToolTip": "shader.frag",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-11-06T20:34:46.355Z",
+              "WhenOpened": "2026-11-08T19:39:00.782Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CMakeLists.txt",
-              "DocumentMoniker": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\CMakeLists.txt",
-              "RelativeDocumentMoniker": "CMakeLists.txt",
-              "ToolTip": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\CMakeLists.txt",
-              "RelativeToolTip": "CMakeLists.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-11-06T20:35:02.739Z",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\Work\\OpenGlC\u002B\u002B\\Projects\\OpenGlGameProject\\OpenGl_Dev\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAUwNwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-08T19:27:55.265Z",
               "EditorCaption": ""
             }
           ]

@@ -7,7 +7,8 @@
 #include <iostream>
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
-void processInput(GLFWwindow *window, int &isPolygoneModeChanged);
+void processInput(GLFWwindow *window, int &isPolygoneModeChanged, float &mixValue);
+
 
 const unsigned int SCR_WIDTH = 1000;
 const unsigned int SCR_HEIGHT = 800;
@@ -51,8 +52,8 @@ int main()
     // Устанавливаем параметры наложения и фильтрации текстур (для текущего связанного объекта текстуры)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     // загрузка и генерация текстуры
     int width, height, nrChannels;
@@ -70,7 +71,6 @@ int main()
 
 
 
-
     unsigned int texture2;
     glGenTextures(1, &texture2);
     glBindTexture(GL_TEXTURE_2D, texture2);
@@ -78,8 +78,8 @@ int main()
     // Устанавливаем параметры наложения и фильтрации текстур (для текущего связанного объекта текстуры)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     unsigned char *data2 = stbi_load("awesomeface.png", &width, &height, &nrChannels, 0);
     if (data2)
@@ -99,10 +99,10 @@ int main()
 
     float vertexArray[] = {
         // координаты        // цвета            // текстурные координаты
-        0.5f, 0.5f, 0.0f,    1.0f, 0.0f, 0.0f,   0.55f, 0.55f,   // верхняя правая вершина
-        0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   0.55f, 0.45f,  // нижняя правая вершина
-        -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.45f, 0.45f, // нижняя левая вершина
-        -0.5f, 0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.45f, 0.55f   // верхняя левая вершина 
+        0.5f, 0.5f, 0.0f,    1.0f, 0.0f, 0.0f,   2.0f,  2.0f,   // верхняя правая вершина
+        0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   2.0f,  0.0f,  // нижняя правая вершина
+        -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.0f,  0.0f, // нижняя левая вершина
+        -0.5f, 0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f,  2.0f   // верхняя левая вершина 
     };
 
     unsigned int indices[] =
@@ -149,16 +149,18 @@ int main()
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
     int isPolygoneModeChanged = 1;
-
+    static float mixValue = 0.3f;
     
+
     ourShader.use();
     glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0); 
     ourShader.setInt("texture2", 1);
 
+    glUniform1f(glGetUniformLocation(ourShader.ID, "mixValue"), mixValue);
 
     while (!glfwWindowShouldClose(window))
     {
-        processInput(window, isPolygoneModeChanged);
+        processInput(window, isPolygoneModeChanged, mixValue);
 
         glClearColor(0.1f, 0.1f, 0.15f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -170,6 +172,9 @@ int main()
 
         // Рисуем наш первый треугольник
         ourShader.use();
+
+        glUniform1f(glGetUniformLocation(ourShader.ID, "mixValue"), mixValue);
+
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
@@ -189,11 +194,39 @@ int main()
     return 0;
 }
 
-void processInput(GLFWwindow *window, int &isPolygoneModeChanged)
+void processInput(GLFWwindow *window, int &isPolygoneModeChanged, float &mixValue)
 {
+    float min = 0.0f;
+    float max = 1.0f;
+
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
     {
         glfwSetWindowShouldClose(window, true);
+    }
+
+    static bool upWasPressed = false;
+    static bool downWasPressed = false;
+
+    bool upIsPressed = (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS);
+    bool downIsPressed = (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS);
+
+    if (upIsPressed && !upWasPressed) 
+    {
+        mixValue += 0.1f;
+
+        if (mixValue == max || mixValue > max)
+        {
+            mixValue = 1.0f;
+        }
+    }
+    else if (downIsPressed && !downWasPressed) 
+    {
+        mixValue -= 0.1f;
+
+        if (mixValue == max || mixValue < min)
+        {
+            mixValue = 0.0f;
+        }
     }
 
     static bool eWasPressed = false;
@@ -214,6 +247,8 @@ void processInput(GLFWwindow *window, int &isPolygoneModeChanged)
     }
 
     eWasPressed = eIsPressed;
+    upWasPressed = upIsPressed;
+    downWasPressed = downIsPressed;
 }
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height)
