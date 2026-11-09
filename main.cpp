@@ -9,7 +9,6 @@
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window, int &isPolygoneModeChanged, float &mixValue);
 
-
 const unsigned int SCR_WIDTH = 1000;
 const unsigned int SCR_HEIGHT = 800;
 
@@ -69,8 +68,6 @@ int main()
         std::cout << "FAILED::TO::LOAD::TEXTURE" << std::endl;
     }
 
-
-
     unsigned int texture2;
     glGenTextures(1, &texture2);
     glBindTexture(GL_TEXTURE_2D, texture2);
@@ -96,20 +93,19 @@ int main()
     stbi_image_free(data);
     stbi_image_free(data2);
 
-
     float vertexArray[] = {
         // координаты        // цвета            // текстурные координаты
-        0.5f, 0.5f, 0.0f,    1.0f, 0.0f, 0.0f,   2.0f,  2.0f,   // верхняя правая вершина
-        0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   2.0f,  0.0f,  // нижняя правая вершина
-        -0.5f, -0.5f, 0.0f,  0.0f, 0.0f, 1.0f,   0.0f,  0.0f, // нижняя левая вершина
-        -0.5f, 0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f,  2.0f   // верхняя левая вершина 
+        0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 2.0f, 2.0f,   // верхняя правая вершина
+        0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 2.0f, 0.0f,  // нижняя правая вершина
+        -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, // нижняя левая вершина
+        -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 2.0f   // верхняя левая вершина
     };
 
     unsigned int indices[] =
-    {
-       0, 1, 3, // первый треугольник
-       1, 2, 3  // второй треугольник
-    }; 
+        {
+            0, 1, 3, // первый треугольник
+            1, 2, 3  // второй треугольник
+        };
 
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
@@ -136,7 +132,6 @@ int main()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *)(6 * sizeof(float)));
     glEnableVertexAttribArray(2);
 
-
     // Обратите внимание, что данное действие разрешено, вызов glVertexAttribPointer() зарегистрировал
     // VBO как привязанный вершинный буферный объект для вершинного атрибута, так что после этого мы можем спокойно выполнить отвязку
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -150,10 +145,9 @@ int main()
 
     int isPolygoneModeChanged = 1;
     static float mixValue = 0.3f;
-    
 
     ourShader.use();
-    glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0); 
+    glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0);
     ourShader.setInt("texture2", 1);
 
     glUniform1f(glGetUniformLocation(ourShader.ID, "mixValue"), mixValue);
@@ -178,8 +172,8 @@ int main()
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-        //glDrawArrays(GL_TRIANGLES, 0, 4);
-        // glBindTexture(GL_TEXTURE_2D, texture);
+        // glDrawArrays(GL_TRIANGLES, 0, 4);
+        //  glBindTexture(GL_TEXTURE_2D, texture);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -210,7 +204,7 @@ void processInput(GLFWwindow *window, int &isPolygoneModeChanged, float &mixValu
     bool upIsPressed = (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS);
     bool downIsPressed = (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS);
 
-    if (upIsPressed && !upWasPressed) 
+    if (upIsPressed && !upWasPressed)
     {
         mixValue += 0.1f;
 
@@ -219,7 +213,7 @@ void processInput(GLFWwindow *window, int &isPolygoneModeChanged, float &mixValu
             mixValue = 1.0f;
         }
     }
-    else if (downIsPressed && !downWasPressed) 
+    else if (downIsPressed && !downWasPressed)
     {
         mixValue -= 0.1f;
 
