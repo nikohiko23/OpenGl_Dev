@@ -40,7 +40,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "OpenGlGameProject::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-OpenGlGameProject-Debug-e5ce757f651230fd374c.json",
+					"jsonFile" : "target-OpenGlGameProject-Debug-e3bb9049e76281ff390c.json",
 					"name" : "OpenGlGameProject",
 					"projectIndex" : 0
 				}
@@ -50,8 +50,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/build",
-		"source" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject"
+		"build" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/build",
+		"source" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev"
 	},
 	"version" : 
 	{

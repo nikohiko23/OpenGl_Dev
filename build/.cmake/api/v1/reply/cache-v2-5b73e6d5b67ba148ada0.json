@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/Work/OpenGlC++/Projects/OpenGlGameProject/build"
+			"value" : "d:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -491,7 +491,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/build/CMakeFiles/pkgRedirects"
+			"value" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -551,7 +551,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject"
+			"value" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1139,7 +1139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/build"
+			"value" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/build"
 		},
 		{
 			"name" : "OpenGlGameProject_IS_TOP_LEVEL",
@@ -1163,7 +1163,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject"
+			"value" : "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev"
 		}
 	],
 	"kind" : "cache",

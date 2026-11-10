@@ -1,6 +1,12 @@
 # ninja log v7
-21	1181	8079165644965357	CMakeFiles/OpenGlGameProject.dir/D_/OpenGL_Dev/glad.c.obj	bd1e0c0b0fa4ca9a
-22	781	8155275652218175	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	2019b15a021c8234
-781	962	8155275659836938	OpenGlGameProject.exe	16bdafd0c8a8dea1
-15	872	8154428103495373	CMakeFiles/OpenGlGameProject.dir/MainShader.cpp.obj	6e7e512035ec2816
-28	1144	8155269963536844	CMakeFiles/OpenGlGameProject.dir/stb_image.cpp.obj	c1df529ce05d0932
+24	428	8160481858387261	CMakeFiles/OpenGlGameProject.dir/stb_image.cpp.obj	c8f199ecbc13e502
+34	483	8160481858472362	CMakeFiles/OpenGlGameProject.dir/D_/OpenGl_Dev/glad.c.obj	e33047298a9a6438
+17	859	8160481858300145	CMakeFiles/OpenGlGameProject.dir/MainShader.cpp.obj	ee983f159d8030e
+9	1109	8160481858218300	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
+1111	1556	8160481869238915	OpenGlGameProject.exe	edf0a3c3db72e257
+15	1013	8160487658356389	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
+1014	1242	8160487668364478	OpenGlGameProject.exe	edf0a3c3db72e257
+28	1042	8160488555015089	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
+1047	1317	8160488565212118	OpenGlGameProject.exe	edf0a3c3db72e257
+29	1002	8160489893235528	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
+1003	1206	8160489902964291	OpenGlGameProject.exe	edf0a3c3db72e257

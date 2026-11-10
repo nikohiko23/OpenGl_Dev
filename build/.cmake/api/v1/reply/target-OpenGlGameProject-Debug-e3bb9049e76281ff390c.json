@@ -16,6 +16,7 @@
 			"add_executable",
 			"target_link_options",
 			"target_link_libraries",
+			"add_custom_command",
 			"include_directories"
 		],
 		"files" : 
@@ -48,6 +49,12 @@
 			{
 				"command" : 3,
 				"file" : 0,
+				"line" : 25,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
 				"line" : 9,
 				"parent" : 0
 			}
@@ -70,8 +77,8 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
-					"path" : "D:/OpenGL_Dev/include"
+					"backtrace" : 5,
+					"path" : "D:/OpenGl_Dev/include"
 				}
 			],
 			"language" : "CXX",
@@ -100,8 +107,8 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
-					"path" : "D:/OpenGL_Dev/include"
+					"backtrace" : 5,
+					"path" : "D:/OpenGl_Dev/include"
 				}
 			],
 			"language" : "C",
@@ -135,7 +142,7 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "D:\\OpenGL_Dev\\glfw3.lib",
+				"fragment" : "D:\\OpenGl_Dev\\glfw3.lib",
 				"role" : "libraries"
 			},
 			{
@@ -154,7 +161,7 @@
 	[
 		{
 			"backtrace" : 3,
-			"fragment" : "D:/OpenGL_Dev/glfw3.lib"
+			"fragment" : "D:/OpenGl_Dev/glfw3.lib"
 		},
 		{
 			"backtrace" : 3,
@@ -163,6 +170,13 @@
 	],
 	"name" : "OpenGlGameProject",
 	"nameOnDisk" : "OpenGlGameProject.exe",
+	"orderDependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "OpenGlGameProject::@6890427a1f51a3e7e1df"
+		}
+	],
 	"paths" : 
 	{
 		"build" : ".",
@@ -204,7 +218,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
-			"path" : "D:/OpenGL_Dev/glad.c",
+			"path" : "D:/OpenGl_Dev/glad.c",
 			"sourceGroupIndex" : 0
 		}
 	],
