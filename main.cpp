@@ -198,9 +198,6 @@ int main()
 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-        // glDrawArrays(GL_TRIANGLES, 0, 4);
-        //  glBindTexture(GL_TEXTURE_2D, texture);
-
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
