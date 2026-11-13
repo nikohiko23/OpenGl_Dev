@@ -11,7 +11,5 @@ uniform float mixValue;
 
 void main()
 {
-    vec2 flippedTexCoord = vec2(-TexCoord.x, TexCoord.y);
-
-    FragColor = mix(texture(texture1, TexCoord), texture(texture2, flippedTexCoord), mixValue);
+    FragColor = mix(texture(texture1, TexCoord), texture(texture2, TexCoord), mixValue);
 };
