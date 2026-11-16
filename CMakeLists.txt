@@ -10,7 +10,7 @@ include_directories("D:/OpenGl_Dev/include")
 
 add_executable(${PROJECT_NAME} 
     main.cpp
-    MainShader.cpp 
+    main_shader.cpp 
     stb_image.cpp
     "D:/OpenGl_Dev/glad.c"
 )
@@ -24,8 +24,8 @@ target_link_options(${PROJECT_NAME} PRIVATE "/NODEFAULTLIB:MSVCRT")
 
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${CMAKE_CURRENT_SOURCE_DIR}/Tile.png"
-        "${CMAKE_CURRENT_SOURCE_DIR}/awesomeface.png"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Images/Tile.png"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Images/Awesomeface.png"
         "${CMAKE_CURRENT_SOURCE_DIR}/shader.vert"
         "${CMAKE_CURRENT_SOURCE_DIR}/shader.frag"
         $<TARGET_FILE_DIR:${PROJECT_NAME}>

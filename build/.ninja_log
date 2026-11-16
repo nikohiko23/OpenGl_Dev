@@ -1,22 +1,9 @@
 # ninja log v7
-24	428	8160481858387261	CMakeFiles/OpenGlGameProject.dir/stb_image.cpp.obj	c8f199ecbc13e502
-34	483	8160481858472362	CMakeFiles/OpenGlGameProject.dir/D_/OpenGl_Dev/glad.c.obj	e33047298a9a6438
-37	1071	8162971472368942	CMakeFiles/OpenGlGameProject.dir/MainShader.cpp.obj	ee983f159d8030e
-38	2288	8163861347997348	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
-1135	1433	8163826723932196	OpenGlGameProject.exe	edf0a3c3db72e257
 58	529	8163861926338345	CMakeFiles/OpenGlGameProject.dir/stb_image.cpp.obj	c8f199ecbc13e502
 67	700	8163861926424047	CMakeFiles/OpenGlGameProject.dir/D_/OpenGl_Dev/glad.c.obj	e33047298a9a6438
-40	1560	8163861926174806	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
 49	1573	8163861926255088	CMakeFiles/OpenGlGameProject.dir/MainShader.cpp.obj	ee983f159d8030e
-40	1139	8163862974129629	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
-40	1511	8163864027413548	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
-42	1665	8163864340534183	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
-1667	2178	8163864356785440	OpenGlGameProject.exe	edf0a3c3db72e257
-66	1756	8163869382441329	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
-1758	2040	8163869399299219	OpenGlGameProject.exe	edf0a3c3db72e257
-34	1678	8163916550600310	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
-1679	2013	8163916567054874	OpenGlGameProject.exe	edf0a3c3db72e257
-33	1120	8163916778474052	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
-1121	1343	8163916789421900	OpenGlGameProject.exe	edf0a3c3db72e257
-32	1102	8163917199229394	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
-1103	1411	8163917209967918	OpenGlGameProject.exe	edf0a3c3db72e257
+13	1564	8165616078820689	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
+1565	1896	8165616094338035	OpenGlGameProject.exe	8394baa502011973
+17	1434	8165617631516446	CMakeFiles/OpenGlGameProject.dir/main.cpp.obj	3305a259930b6d76
+28	1470	8165617631614472	CMakeFiles/OpenGlGameProject.dir/main_shader.cpp.obj	6694d1fcc74dd22c
+1470	1755	8165617646041938	OpenGlGameProject.exe	f9a9627eed18b411
