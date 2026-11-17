@@ -50,7 +50,9 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${CMAKE_CURRENT_SOURCE_DIR}/Images/Tile.png"
         "${CMAKE_CURRENT_SOURCE_DIR}/Images/Awesomeface.png"
-        "${CMAKE_CURRENT_SOURCE_DIR}/Shader/shader.vert"
-        "${CMAKE_CURRENT_SOURCE_DIR}/Shader/shader.frag"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Shader/colors.vert"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Shader/colors.frag"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Shader/lamp.frag"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Shader/lamp.vert"
         $<TARGET_FILE_DIR:${PROJECT_NAME}>
 )

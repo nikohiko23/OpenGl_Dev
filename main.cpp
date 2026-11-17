@@ -31,6 +31,8 @@ float lastFrame = 0.0f; // время последнего кадра
 
 bool firstMouse = true;
 
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
 int main()
 {
     if (!glfwInit())
@@ -65,8 +67,8 @@ int main()
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-    Shader ourShader("D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/Shader/shader.vert", "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/Shader/shader.frag");
-
+    Shader lightingShader("D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/Shader/colors.vert", "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/Shader/colors.frag");
+    Shader lampShader("D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/Shader/lamp.vert", "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/Shader/lamp.frag");
     // Созданние текстуры
     unsigned int texture1;
     glGenTextures(1, &texture1);
@@ -179,8 +181,9 @@ int main()
             1, 2, 3  // второй треугольник
         };
 
-    unsigned int VBO, VAO, EBO;
+    unsigned int VBO, VAO, EBO, lightVAO;
     glGenVertexArrays(1, &VAO);
+    glGenVertexArrays(1, &lightVAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
 
@@ -200,6 +203,10 @@ int main()
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
+    glBindVertexArray(lightVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO); // тот же VBO!
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)0);
+    glEnableVertexAttribArray(0);
     // Обратите внимание, что данное действие разрешено, вызов glVertexAttribPointer() зарегистрировал
     // VBO как привязанный вершинный буферный объект для вершинного атрибута, так что после этого мы можем спокойно выполнить отвязку
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -214,53 +221,43 @@ int main()
     int isPolygoneModeChanged = 1;
     static float mixValue = 0.3f;
 
-    ourShader.use();
-    ourShader.setInt("texture1", 0);
-    ourShader.setInt("texture2", 1);
+    // ourShader.setInt("texture1", 0);
+    // ourShader.setInt("texture2", 1);
 
     // возможно нужен это смена трансформа фигуры но надо наладить это в шэйдере
     // glm::mat4 trans = glm::mat4(1.0f);
     // unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
     // glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-    glUniform1f(glGetUniformLocation(ourShader.ID, "mixValue"), mixValue);
 
     while (!glfwWindowShouldClose(window))
     {
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+
         processInput(window, isPolygoneModeChanged, mixValue);
 
         glClearColor(0.1f, 0.1f, 0.15f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        ourShader.use();
+        // glActiveTexture(GL_TEXTURE0);
+        // glBindTexture(GL_TEXTURE_2D, texture1);
+        // glActiveTexture(GL_TEXTURE1);
+        // glBindTexture(GL_TEXTURE_2D, texture2);
 
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);
-
-        // glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-
-        // glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-        // glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
-
-        // glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
-        // glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
-
-        // glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
+        lightingShader.use();
+        lightingShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        lightingShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
 
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
         glm::mat4 view = camera.GetViewMatrix();
 
-        ourShader.setMat4("projection", projection);
-        ourShader.setMat4("view", view);
-        ourShader.setFloat("mixValue", mixValue);
+        lightingShader.setMat4("projection", projection);
+        lightingShader.setMat4("view", view);
+        // ourShader.setFloat("mixValue", mixValue);
 
         glBindVertexArray(VAO);
-
-        float currentFrame = glfwGetTime();
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;
 
         for (unsigned int i = 0; i < 10; i++)
         {
@@ -272,10 +269,23 @@ int main()
                 float angle = 20.0f * i + currentFrame * 50.0f;
                 model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
             }
-            ourShader.setMat4("model", model);
+            lightingShader.setMat4("model", model);
 
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
+
+        glm::mat4 model = glm::mat4(1.0f);
+
+        lampShader.use();
+        lampShader.setMat4("projection", projection);
+        lampShader.setMat4("view", view);
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.2f)); // куб меньшего размера
+        lampShader.setMat4("model", model);
+
+        glBindVertexArray(lightVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
 
         // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
@@ -293,6 +303,7 @@ int main()
 
     // Опционально: освобождаем все ресурсы, как только они выполнили свое предназначение
     glDeleteVertexArrays(1, &VAO);
+    glDeleteVertexArrays(1, &lightVAO);
     glDeleteBuffers(1, &VBO);
     glDeleteBuffers(1, &EBO);
 
