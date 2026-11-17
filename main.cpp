@@ -9,7 +9,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-
 //
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -66,7 +65,7 @@ int main()
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-    Shader ourShader("D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/shader.vert", "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/shader.frag");
+    Shader ourShader("D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/Shader/shader.vert", "D:/Work/OpenGlC++/Projects/OpenGlGameProject/OpenGl_Dev/Shader/shader.frag");
 
     // Созданние текстуры
     unsigned int texture1;
