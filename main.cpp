@@ -263,7 +263,7 @@ int main()
         // ourShader.setFloat("mixValue", mixValue);
 
         glBindVertexArray(VAO);
-        // Something new
+        // Something new for today
         for (unsigned int i = 0; i < 10; i++)
         {
             glm::mat4 model = glm::mat4(1.0f);
